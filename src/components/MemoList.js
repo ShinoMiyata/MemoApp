@@ -33,8 +33,6 @@ class MemoList extends React.Component {
 
           </View>
 
-
-
       );
   }
 }
@@ -64,4 +62,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default MemoList
+export default MemoList;

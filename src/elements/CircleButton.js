@@ -5,9 +5,7 @@ class CircleButton extends React.Component {
   render() {
     return(
           <View style={styles.circleButton}>
-              <Text style={styles.circleButtonTitle}>
-                {this.props.children}
-              </Text>
+              <Text style={styles.circleButtonTitle}>{this.props.children}</Text>
           </View>
       );
   }
