@@ -4,15 +4,54 @@ import { StyleSheet,View, Text, TextInput, TouchableHighlight } from 'react-nati
 import CircleButton from '../elements/CircleButton';
 
 class LoginScreen extends React.Component {
+  state = {
+    email: '',
+    password: '',
+  }
+
+  handleSubmit() {
+
+ 
+
+
+
+  /*
+    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+      .then(() => {
+        SecureStore.setItemAsync('email', this.state.email);
+        SecureStore.setItemAsync('password', this.state.password);
+        this.navigateToHome();
+      })
+      .catch();
+      */
+  }
+
   render() {
     return(
       <View style={styles.container}>
             <Text style={styles.title}>
             ログイン
             </Text>
-            <TextInput style={styles.input} multiline value="Email Address" />
-            <TextInput style={styles.input} multiline value="Password" />
-            <TouchableHighlight style={styles.button} onPress={() => {}}  underlayColor="#C70F66">
+            <TextInput
+            style={styles.input} 
+            value={this.state.email} 
+            onChangeText={(text) => { this.setState({ email: text }); }}
+            autoCapitalize="none"
+            autoCorrect={false}
+            placeholder="Email Address"
+            underlineColorAndroid="transparent"
+            />
+            <TextInput
+              style={styles.input}
+              value={this.state.Password}
+              onChangeText={(text) => { this.setState({ password: text }); }}
+              autoCapitalize="none"
+              autoCorrect={false}
+              placeholder="Password"
+              underlineColorAndroid="transparent"
+              secureTextEntry
+            />
+            <TouchableHighlight style={styles.button} onPress={this.handleSubmit.bind(this)}  underlayColor="#C70F66">
               <Text style={styles.buttonTitle}>ログインする</Text>
             </TouchableHighlight>
       </View>
